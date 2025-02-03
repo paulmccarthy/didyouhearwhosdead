@@ -26,8 +26,16 @@
                     <h1 id="todaysDate" class="mt-5 text-center">On this day:&nbsp;</p>
                 </div>
             </div>
-            <div class="row">
-                <div id="content" class="mt-5 col-sm-10 offset-sm-1 text-left"></div>
+            <div id="progress-wrapper" class="row">
+                <div class="col-sm-6 offset-sm-3 mt-3">
+                    <div class="progress">
+                        <div id="progress-bar" class="progress-bar bg-warning" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="content-wrapper" class="row">
+                <div id="content" class="hidden mt-5 col-sm-10 offset-sm-1 text-left"></div>
             </div>
             <div class="row">
                 <div class="mt-5 mb-3 col-sm-6 offset-sm-3 text-center">
