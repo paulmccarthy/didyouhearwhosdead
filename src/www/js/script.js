@@ -84,9 +84,39 @@ const addData = (deaths) => {
 
         // attach the row to the parent
         wrapper.appendChild(personRow);
+
+        // show the content and hide the progress bar
+        wrapper.classList.replace('hidden', 'show');
+        document.getElementById('progress-wrapper').classList.add('hidden');
     }
 };
 
+const updateProgressBar = () => {
+    const bar = document.getElementById('progress-bar');
+    const wrapper = document.getElementById('progress-wrapper');
+
+    const interval = setInterval(() => {
+        const isHidden = wrapper.classList.contains('hidden');
+
+        if (!isHidden) {
+            let currentWidth = Number(bar.style.width.replace('%', ''));
+
+            if (currentWidth >= 100) {
+                currentWidth = 0;
+            } else {
+                currentWidth += 0.5;
+            }
+
+            bar.style.width = `${currentWidth}%`;
+            bar.ariaValueNow = currentWidth;
+
+        } else if (interval) {
+            clearInterval(interval);
+        }
+    }, 100);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+    updateProgressBar();
     updatePageWithDate();
 });

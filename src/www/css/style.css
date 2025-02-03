@@ -1,3 +1,15 @@
 body {
     background-color: #d0beab;
 }
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1000ms ease-in, visibility 0ms ease-in 1000ms;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 100ms ease-in, visibility 1000ms ease-in;
+}
